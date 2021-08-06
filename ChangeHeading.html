@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="angular.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div ng-app="headApp" ng-controller="headCtrl">
+        <h1>{{myHead}}</h1>
+    </div>
+    <script>
+        angular.module("headApp", []).controller("headCtrl", ['$scope', '$timeout', function ($scope, $timeout) {
+            $scope.myHead = "Hello World!";
+            $timeout(function () {
+                $scope.myHead = "How are you today?";
+            }, 4000);
+        }])
+    </script>
+</body>
+
+</html>
